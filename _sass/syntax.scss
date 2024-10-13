@@ -24,17 +24,17 @@
   .nt { color: #E8BF5C; } /* 名称.标签 #000080 */
   .nv { color: #008080; } /* 名称.变量 */
   .ne { color: #FF6347; font-weight: bold; } /* 名称.异常 */
-  .nf { color: #cccccc; font-weight: bold; } /* 名称.函数 */
+  .nf { color: #cccccc;  } /* 名称.函数 font-weight: bold;*/
   .nc { color: #cccccc; font-weight: bold; } /* 名称.类 */
   .w { color: #bbb; } /* 空白 */
   .bp { color: #999; } /* 内置伪名称 */
   .il { color: #099; } /* 长整型 */
-  .o { color: #ce5c00; font-weight: bold }  /* 操作符 */
+  .o { color: #ce5c00; font-weight: bold; }  /* 操作符 */
   .vc, .vg, .vi { color: #008080; } /* 变量相关 */
   .m, .mf, .mh, .mi, .mo { color: #099; } /* 浮点数、十六进制、整数、八进制 */
-  .k, .kc, .kd, .kn, .kp, .kr, .kt, .gs, .ow { color: #4f73a9; font-weight: bold; }/* 关键词、操作符、常量等 */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .gs, .ow { color: #4f73a9; }/* 关键词、操作符、常量等 font-weight: bold; */
   .s, .ss, .sr, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #80B861; }/* 字符串相关 原d14*/
-  .cp, .cs, .cm, .c1, .c{ color: #545454; font-weight: bold; font-style: italic; }/* 预处理注释、特殊注释、多行注释、单行注释、注释  #A9A9A9 斜线 */
+  .cp, .cs, .cm, .c1, .c{ color: #676767; }/* 预处理注释、特殊注释、多行注释、单行注释、注释  font-weight: bold; font-style: italic; #A9A9A9 斜线 */
   .n, .g, .l, .p, .ld, .nl, .nx, .py { color: #cccccc; } /* 名称, 通用, 文字, 标点符号, 文字.日期, 名字.标签, 名字.其他, 名字.财产 */
 }
 /* 先知css https://xz.aliyun.com/static/css/bbs/tango.css */
