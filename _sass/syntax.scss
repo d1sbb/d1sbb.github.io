@@ -30,13 +30,15 @@
   .il { color: #099; } /* 长整型 */
   .ne { color: #FF6347; font-weight: bold; } /* 名称.异常 */
   .nf { color: #FF7F50; font-weight: bold; } /* 名称.函数 */
+  .o { color: #ce5c00; font-weight: bold }  /* 操作符 */
   /*.nc { color: #00cdcd; font-weight: bold; }  名称.类 */
   .vc, .vg, .vi { color: #008080; } /* 变量相关 */
   .gd .x { color: #000; background-color: #faa; } /* 删除.特定 background-color: #fdd*/
   .gi, .gi .x { color: #000; background-color: #dfd; }/* 插入 */
   .mf, .mh, .mi, .mo { color: #099; } /* 浮点数、十六进制、整数、八进制 */
-  .k, .o, .kc, .kd, .kp, .kr, .kt, .gs, .ow { font-weight: bold; }/* 关键词、操作符、常量等 */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .gs, .ow { color: #204a87; font-weight: bold; }/* 关键词、操作符、常量等 */
   .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #8FBC8F; }/* 字符串相关 原d14*/
   .cp, .cs, .cm, .c1, .c{ color: #545454; font-weight: bold; font-style: italic; }/* 预处理注释、特殊注释、多行注释、单行注释、注释  #A9A9A9 斜线 */
   .n, .g, .l, .p, .ld, .nl, .nx, .py { color: #cccccc; } /* 名称, 通用, 文字, 标点符号, 文字.日期, 名字.标签, 名字.其他, 名字.财产 */
 }
+/* 阿里css https://xz.aliyun.com/static/css/bbs/tango.css */
