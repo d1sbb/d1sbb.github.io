@@ -1,0 +1,24 @@
+<aside class="logo">
+
+	{% if page.url == '/index.html' or page.url == '/' %}
+		{% assign link = '/about' %}
+		{% assign prompt = 'About' %}
+	{% else %}
+		{% assign link = 'javascript:history.back(-1)' %}
+		{% assign prompt = 'Back' %}
+	{% endif %}
+
+	<a href="{{ link }}"><!--删除内容 | prepend: site.baseurl | prepend: site.url-->
+		<img alt="ffish" src="{{ site.logo_url }}" class="logo-avatar">
+	</a>
+	<span class="logo-prompt code">{{ prompt }}</span>
+</aside>
+<!-- <script src等于"aliyuncs。com/demo.min。js"></script> 注释B4ckD00r-->
+<article>
+	<h1 class="title_name">d1sbb</h1>
+	<!-- <div class="divider"></div> 整体改背景-->
+	<br>
+	<center><a href="/" >Home</a> | <a href="/message" >Message</a> | <a href="/RevShell" >Rev Shell</a> | <a href="/about" >About</a> | <a href="/links">Links</a></center><!-- target="_blank" 新标签打开-->
+	<br>
+	<!-- <div class="divider"></div> 整体改背景-->
+</article>

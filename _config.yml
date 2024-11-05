@@ -1,0 +1,48 @@
+# Site Info
+title:              "d1sbb" #站点标题
+description:        "d1sbb的丘丘空间" #站点描述
+author_name:        "d1sbb" # 作者名称
+logo_url:           /assets/avatar.webp #备用https://aroucc.oss-cn-hangzhou.aliyuncs.com/images/avatar.jpg
+
+# Site Settings
+url:                https://disbb.com # 网站的基本URL
+baseurl:            # 网站的根路径（为空表示根路径）
+#permalink:          /:title  # 链接格式（如pretty、date、none）
+timezone:           Asia/Shanghai # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true # 启用 MathJax 支持，用于渲染数学公式，设置为 'false' 则禁用
+future:             true # 是否显示未来的文章
+
+# Site Build
+highlighter:        rouge # 代码高亮引擎
+markdown:           kramdown # Markdown引擎
+kramdown:
+    input:          GFM # GitHub Flavored Markdown（GitHub 风格的 Markdown）
+sass:
+    style:          :compressed # SASS 样式设置为压缩模式
+
+paginate: 10 # 每页文章数量
+paginate_path: "index/:num" # 分页路径
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script" ]
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate #分页功能
+
+defaults: #全局变量
+  -
+    scope:
+      path:         "" # 表示适用于所有文件
+    values:
+      layout:       "null" # 默认布局设置为 "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

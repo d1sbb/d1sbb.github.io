@@ -1,0 +1,23 @@
+.floating-div {/* 悬浮目录 */
+    position: fixed;
+    /* top: 0; */
+    right: 0;
+    width: 200px; /* 20px */
+    height: 550px; /* 20px */
+    bottom: 100px; /* 650px */
+    background: #1D1F21; /* 整体改背景#FFFFFF */
+}
+.floating-ul, .floating-li{/* ul缩进 在toc.js里 */
+    margin: 5px 0;
+    padding-left: 10px;
+    display: block;
+    list-style-type: none;
+}
+.floating-a{
+    text-decoration: none;
+}/* 目录 id="myCatalogue"
+#myCatalogue{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+}*/

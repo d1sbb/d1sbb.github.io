@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<!--添加目录与ScrollSpy效果 -->
+<link href="/assets/toc.css" rel="stylesheet" />
+<div id="toc" class="floating-div" onclick="toggleSize(this)"></div>
+<!--end添加目录与ScrollSpy效果 -->
+
+<article>
+	<div class="center">
+		<h1 class="title">{{ page.title }}</h1>
+		<time class="code">{{ page.date | date: '%B %-d, %Y' }} | 阅读：<span id="busuanzi_value_page_pv"></span></time>
+	</div>
+
+	<!-- <div class="divider"></div> 整体改背景-->
+	<br>
+	{% if page.music-id %}
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&auto=1&id={{ page.music-id }}&height=66"></iframe>
+	{% endif %}
+	<div class="content"><!--整体改背景 新增div-->
+		{{ content }}
+	</div>
+	<div>
+			{% include comment.html %}<!-- Comments -->
+	</div>
+</article>
+
+<div class="page-navigation code">
+	{% if page.next.url %}
+    <a class="next" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
+		<span> &middot; </span>
+  {% endif %}
+		<a class="home" href='{{ "/" | prepend: site.baseurl | prepend: site.url }}' title="Back to Index">INDEX</a>
+  {% if page.previous.url %}
+		<span> &middot; </span>
+    <a class="prev" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
+  {% endif %}
+</div>
+
+<!--图片放大功能 -->
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-12-M/jquery/3.2.1/jquery.min.js"></script>
+<!-- × https://unpkg.com/arouline@1.0.13/jquery-3.2.1.min.js
+https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+https://npm.elemecdn.com/jquery@3.2.1/dist/jquery.min.js
+https://github.elemecdn.com/jquery@3.2.1/dist/jquery.min.js
+https://unpkg.zhimg.com/jquery@3.2.1/dist/jquery.min.js
+https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js
+https://cdn.staticfile.net/jquery/3.2.1/jquery.min.js
+-->
+<link rel="stylesheet" type="text/css" media="all"  href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-12-M/fancybox/3.5.7/jquery.fancybox.css">
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-12-M/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("p img").each(function() {
+			var strA = "<a data-fancybox='images'  style='text-decoration: none;'  href='" + this.src + "'></a>";
+			$(this).wrapAll(strA);
+		});
+	});
+	$('[data-fancybox="gallery"]').fancybox({
+		openEffect : 'elastic',
+		closeEffect : 'elastic',
+	});
+</script>
+<!--end图片放大功能 -->
+
+<!--添加目录与ScrollSpy效果 -->
+<script src="/assets/js/toc.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#toc').toc();
+	});
+</script>
+<!--end添加目录与ScrollSpy效果 -->

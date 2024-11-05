@@ -1,0 +1,40 @@
+.highlight {
+  margin: 10px 0;
+  border: none;
+  background-color: #2E2E2E; /* 深灰背景 */
+  .err {
+    color: #ff3333; /* 错误 #a61717 #BC3F3C*/
+    // background-color: #e3d2d2; 注释 框
+  }
+  .ge { font-style: italic; }/* 强调 */
+  .gr { color: #FF0000; } /* 错误 */
+  .gh { color: #999; } /* 头部 */
+  .go { color: #888; } /* 输出 */
+  .gp { color: #555; } /* 提示符 */
+  .gu { color: #aaa; } /* 子标题 */
+  .gt { color: #FF4500; } /* 回溯 */
+  .gd { color: #000; background-color: #faa; } /* 删除.特定 background-color: #fdd*/
+  .gi, .x { color: #000; background-color: #dfd; }/* 插入 */
+  .na { color: #cba605; } /* 名称.属性 */
+  .nb { color: #0086b3; } /* 名称.内置 */
+  .nd { color: #BBB529; } /* 名称.常量 */
+  .no { color: #008080; } /* 名称.对象 */
+  .ni { color: #9370DB; } /* 名称.实体 */
+  .nn { color: #555; } /* 名称.命名空间 */
+  .nt { color: #E8BF5C; } /* 名称.标签 #000080 */
+  .nv { color: #008080; } /* 名称.变量 */
+  .ne { color: #FF6347; font-weight: bold; } /* 名称.异常 */
+  .nf { color: #cccccc; } /* 名称.函数 font-weight: bold;*/
+  .nc { color: #cccccc; } /* 名称.类 font-weight: bold; */
+  .w { color: #bbb; } /* 空白 */
+  .bp { color: #999; } /* 内置伪名称 */
+  .il { color: #099; } /* 长整型 */
+  .o { color: #b87a48; font-weight: bold; }  /* 操作符 */
+  .vc, .vg, .vi { color: #008080; } /* 变量相关 */
+  .m, .mf, .mh, .mi, .mo { color: #099; } /* 浮点数、十六进制、整数、八进制 */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .gs, .ow { color: #b87a48; font-weight: bold; }/* 关键词、操作符、常量等 */
+  .s, .ss, .sr, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #80B861; }/* 字符串相关 原d14*/
+  .cp, .cs, .cm, .c1, .c{ color: #676767; }/* 预处理注释、特殊注释、多行注释、单行注释、注释  font-weight: bold; font-style: italic; #A9A9A9 斜线 */
+  .n, .g, .l, .p, .ld, .nl, .nx, .py { color: #cccccc; } /* 名称, 通用, 文字, 标点符号, 文字.日期, 名字.标签, 名字.其他, 名字.财产 */
+}
+/* 先知css https://xz.aliyun.com/static/css/bbs/tango.css */

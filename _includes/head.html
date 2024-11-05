@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<link rel="shortcut icon" href="/assets/favicon.png"><!-- 修改 {{ "/assets/favicon.png" | prepend: site.baseurl | prepend: site.url }}-->
+<link rel="icon" href="/assets/favicon1.png" sizes="128x128">
+<link rel="apple-touch-icon" href="/assets/touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href='{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}' />
+<link rel="canonical" href='{{ page.url | prepend: site.baseurl | prepend: site.url }}'>
+<link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-12-M/font-awesome/4.7.0/css/font-awesome.min.css"><!--icon-->
+
+{% if page.title %}
+<title>{{ page.title }}</title><!-- {{ page.title }}  -  {{ site.title }} this back page-->
+{% else %}
+<title>{{ site.title }}</title>
+{% endif %}
+
+<link rel="stylesheet" href="/assets/core.css">
+
+{% if site.mathjax %}
+{% endif %}

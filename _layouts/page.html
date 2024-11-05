@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% if page.title == 'About' or page.title == 'Links' or page.title == 'Message' or page.title == 'Reverse Shell' or page.title == 'Roco' %}
+	<article class="section_index"><!--判断为真 则用css里的section_index大小-->
+
+			<h1 class="title_index">{{ page.title }}</h1>
+
+			{{ content | indent}}
+
+	</article>
+{% else %}
+	<article>
+
+		<h1 class="title">{{ page.title }}</h1>
+
+		{{ content | indent}}
+
+	</article>
+{% endif %}
+<div class="page-navigation code">
+	<a class="home" href='{{ "/" | prepend: site.baseurl | prepend: site.url }}' title="Back to Index">&larr; INDEX</a>
+</div>
