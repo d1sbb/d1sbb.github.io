@@ -156,7 +156,7 @@ demo.regAction("hello",function (resolve,param) {
 })
 
 ---------------------------------
-访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={%22username%22:%20%22admin%22,%22password%22:%20%22123456%22}
+访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 ```
 
 Edited request直接切换为明文，再Repeater明文即可，可以用于明文爆破
@@ -306,7 +306,7 @@ demo.regAction("hello",function (resolve,param) {
 })
 
 ---------------------------------
-访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={%22username%22:%20%22admin%22,%22password%22:%20%22123456%22}
+访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 # coding: utf-8
 import json
 import base64
@@ -701,7 +701,7 @@ demo.regAction("hello",function (resolve,param) {
 })
 
 ---------------------------------
-访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={%22username%22:%20%22admin%22,%22password%22:%20%22123456%22}
+访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 # coding: utf-8
 import json
 import base64
@@ -731,7 +731,7 @@ def encrypt(data) -> bytes:
     username = json_data.get("username", "")
     password = json_data.get("password", "")
     
-    response1 = requests.get("http://127.0.0.1:12080/go?group=zzz&action=hello&param={%22username%22:%20%22"+username+"%22,%22password%22:%20%22"+password+"%22}")
+    response1 = requests.get("http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"'+username+'","password":"'+password+'"}')
     json_data1 = response1.json()
     json_data2 = json_data1["data"]
     get_random = json.loads(json_data2)["random"]
@@ -966,4 +966,45 @@ def decrypt():
 if __name__ == '__main__':  
     app.debug = True # 设置调试模式，生产模式的时候要关掉debug  
     app.run(host="0.0.0.0",port="8888")
+```
+
+## jsEncrypter取Des规律key
+
+靶场：[encrypt靶场](http://82.156.57.228:43899/easy.php)第五关 Des规律key
+
+```javascript
+function js_encrypt(payload){
+  var newpayload;
+  /**********在这里编写调用加密函数进行加密的代码************/
+  const username = "admin"
+  const password = payload
+  const key = CryptoJS.enc.Utf8.parse(padEndPolyfill(username.slice(0, 8), 8, '6'));
+  const iv = CryptoJS.enc.Utf8.parse('9999' + padEndPolyfill(username.slice(0, 8), 4, '9'));
+  const encryptedPassword = CryptoJS.DES.encrypt(password, key, {
+    iv: iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  });
+
+  const encryptedHex = encryptedPassword.ciphertext.toString(CryptoJS.enc.Hex);
+  newpayload = encryptedHex
+  /**********************************************************/
+  return newpayload;
+}
+
+/**********自己写的padEndPolyfill函数************/
+function padEndPolyfill(str, targetLength, padString) {
+  targetLength = targetLength >> 0; // 转为整数
+  padString = typeof padString === 'string' ? padString : ' '; // 确保是字符串
+  if (str.length > targetLength) {
+    return String(str);
+  }
+  targetLength = targetLength - str.length;
+  if (padString.length > 0) {
+    while (padString.length < targetLength) {
+      padString += padString; // 自行扩展字符串长度
+    }
+  }
+  return String(str) + padString.slice(0, targetLength);
+}
 ```
