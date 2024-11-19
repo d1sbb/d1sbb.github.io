@@ -154,10 +154,8 @@ demo.regAction("hello",function (resolve,param) {
     data = en.encrypt(JSON.stringify(data1))
     resolve(data);
 })
-
----------------------------------
-访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 ```
+访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 
 Edited request直接切换为明文，再Repeater明文即可，可以用于明文爆破
 
@@ -304,8 +302,8 @@ demo.regAction("hello",function (resolve,param) {
     data = JSON.stringify(data1)
     resolve(data);
 })
-
----------------------------------
+```
+```python
 访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 # coding: utf-8
 import json
@@ -699,8 +697,8 @@ demo.regAction("hello",function (resolve,param) {
     data["random"] = random
     resolve(data);
 })
-
----------------------------------
+```
+```python
 访问测试http://127.0.0.1:12080/go?group=zzz&action=hello&param={"username":"admin","password":"123456"}
 # coding: utf-8
 import json
